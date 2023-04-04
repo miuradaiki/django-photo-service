@@ -1,0 +1,7 @@
+{% extends 'app/base.html' %} {% block content %}
+<h2 class="user-name">@{{ user.username }}</h2>
+{% for photo in photos %}
+<a href="{% url 'app:photos_detail' photo.id %}">
+  <img src="{{ photo.image.url }}" class="photo-img">
+</a>
+{% endfor %} {% endblock %}
